@@ -1,4 +1,4 @@
-package com.youmeek.ssm.manage.vo;
+package cn.ustc.ssm.manage;
 
 public class JSONResult {
     
