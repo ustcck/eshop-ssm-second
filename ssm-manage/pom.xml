@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.youmeek.parent</groupId>
+        <groupId>cn.ustc.parent</groupId>
         <artifactId>ssm-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <!--也是父类级别工程,只是是作为一些功能模块的父级，这个是要最最优先install的,但是又因为他下面有依赖其他同级模块,所以其他同级模块要先install-->
-    <groupId>com.youmeek.manage</groupId>
+    <groupId>cn.ustc.manage</groupId>
     <artifactId>ssm-manage</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -28,9 +28,9 @@
 
         <!--项目公共模块，因为父类依赖此模块，所以父类下的所有子类会有传递依赖-->
         <dependency>
-            <groupId>com.youmeek.common</groupId>
+            <groupId>cn.ustc.common</groupId>
             <artifactId>ssm-common</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
