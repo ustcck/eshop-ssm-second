@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.youmeek.parent</groupId>
+    <groupId>cn.ustc.parent</groupId>
     <artifactId>ssm-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <!--父级项目一般都是用pom来子项目依赖,一般软件的版本号/插件/都在这里进行定义,统一做管理-->
