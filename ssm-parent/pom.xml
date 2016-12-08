@@ -13,7 +13,7 @@
     <description>
         一个简单SpringMVC+Spring+Mybatis整理项目
     </description>
-    <url>http://code.YouMeek.com/</url>
+    <url>http://maven.apache.org</url>
 
 
     <!-- 集中定义公用的依赖版本号 -->
@@ -458,6 +458,8 @@
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${maven-dependency-plugin.version}</version>
                 </plugin>
+
+
 
             </plugins>
         </pluginManagement>
