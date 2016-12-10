@@ -10,10 +10,10 @@
     <!--install的时候parent也是要最新instal的,不然其他依赖就依赖不到这里了-->
     <packaging>pom</packaging>
     <name>ssm</name>
-    <description>
-        一个简单SpringMVC+Spring+Mybatis整理项目
-    </description>
-    <url>http://maven.apache.org</url>
+    <!--<description>-->
+        <!--一个简单SpringMVC+Spring+Mybatis整理项目-->
+    <!--</description>-->
+    <!--<url>http://maven.apache.org</url>-->
 
 
     <!-- 集中定义公用的依赖版本号 -->
@@ -29,10 +29,12 @@
 
         <!--2016-02-20切换到spring3试试-->
         <!--mybatis官网：http://blog.mybatis.org/2016/02/mybatis-331-and-mybatis-spring-124.html,在2016-02-13发布了3.3.1版本-->
-        <spring.version>3.2.16.RELEASE</spring.version>
+        <!--<spring.version>3.2.16.RELEASE</spring.version>-->
+        <spring.version>4.1.3.RELEASE</spring.version>
         <mybatis.version>3.3.1</mybatis.version>
-        <mybatis-spring.version>1.2.4</mybatis-spring.version>
 
+        <mybatis-spring.version>1.2.4</mybatis-spring.version>
+        <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
 
         <!--下面这两个是springAOP需要用到-->
         <aspectjweaver.version>1.7.2</aspectjweaver.version>
@@ -40,26 +42,35 @@
 
 
         <junit.version>4.11</junit.version>
-        <mysql-connector.version>5.1.21</mysql-connector.version>
-        <druid.version>1.0.4</druid.version>
+        <mysql-connector.version>5.1.32</mysql-connector.version>
+        <druid.version>1.0.9</druid.version>
 
         <slf4j.version>1.7.7</slf4j.version>
+        <!--<jackson.version>2.4.2</jackson.version>-->
         <log4j.version>1.2.17</log4j.version>
 
         <javaee-api.version>7.0</javaee-api.version>
         <jstl.version>1.2</jstl.version>
         <jsp-api.version>2.0</jsp-api.version>
+        <joda-time.version>2.5</joda-time.version>
         <servlet-api.version>2.5</servlet-api.version>
 
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
         <commons-io.version>2.4</commons-io.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-net.version>3.3</commons-net.version>
         <commons-email.version>1.3.2</commons-email.version>
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
 
-        <httpclient.version>4.3.3</httpclient.version>
+        <httpclient.version>4.3.5</httpclient.version>
         <jackson-databind.version>2.4.2</jackson-databind.version>
         <fastjson.version>1.1.43</fastjson.version>
+
+        <pagehelper.version>4.1.6</pagehelper.version>
+        <jsqlparser.version>0.9.1</jsqlparser.version>
+
+        <jedis.version>2.7.2</jedis.version>
+        <solrj.version>4.10.3</solrj.version>
         <!--架包版本变量 end-->
 
         <!--插件版本变量 start-->
@@ -106,6 +117,24 @@
         <!--架包依赖 start-->
         <dependencies>
 
+            <!-- 时间操作组件 -->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
+            </dependency>
+
+            <!-- httpclient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
             <!-- ############################################################### Spring 相关包 start ############################################################### -->
             <!--spring 源码包下载地址：https://github.com/spring-projects/spring-framework/releases-->
             <!--http://takeme.iteye.com/blog/1977585-->
@@ -221,6 +250,40 @@
                 <version>${mybatis-spring.version}</version>
             </dependency>
 
+            <!--mybatis分页插件-->
+            <!--<dependency>-->
+                <!--<groupId>com.github.miemiedev</groupId>-->
+                <!--<artifactId>mybatis-paginator</artifactId>-->
+                <!--<version>${mybatis.paginator.version}</version>-->
+            <!--</dependency>-->
+            <!-- https://mvnrepository.com/artifact/com.github.miemiedev/mybatis-paginator -->
+            <dependency>
+                <groupId>com.github.miemiedev</groupId>
+                <artifactId>mybatis-paginator</artifactId>
+                <version>${mybatis.paginator.version}</version>
+            </dependency>
+
+            <!--pagehelper组件-->
+            <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+
+            <!-- Redis客户端 -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+
+            <!-- solr客户端 -->
+            <dependency>
+                <groupId>org.apache.solr</groupId>
+                <artifactId>solr-solrj</artifactId>
+                <version>${solrj.version}</version>
+            </dependency>
 
             <!-- 导入Mysql数据库链接jar包 -->
             <dependency>

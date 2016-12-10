@@ -1,4 +1,4 @@
-package cn.ustc.ssm.manage;
+package com.taotao.common.pojo;
 
 public class JSONResult {
     
