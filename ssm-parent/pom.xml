@@ -71,6 +71,7 @@
 
         <jedis.version>2.7.2</jedis.version>
         <solrj.version>4.10.3</solrj.version>
+        <jsch.version>0.1.54</jsch.version>
         <!--架包版本变量 end-->
 
         <!--插件版本变量 start-->
@@ -116,7 +117,13 @@
 
         <!--架包依赖 start-->
         <dependencies>
-
+            <!--jschSFTP文件上传-->
+            <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+            <dependency>
+                <groupId>com.jcraft</groupId>
+                <artifactId>jsch</artifactId>
+                <version>${jsch.version}</version>
+            </dependency>
             <!-- 时间操作组件 -->
             <dependency>
                 <groupId>joda-time</groupId>
