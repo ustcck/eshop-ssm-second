@@ -91,6 +91,9 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>taotao-manager</servlet-name>
+        <!--RESTful方式配置为/-->
+        <!--DispatcherServlet拦截/开头的所有请求，对静态资源的访问就报错.
+        所以需要通过设置对静态资源进行解析.<mvc:resources mapping="/css/**" location="/WEB-INF/css/"/> -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 <!--    <welcome-file-list>

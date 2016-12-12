@@ -5,6 +5,7 @@ import com.jcraft.jsch.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.Vector;
 
@@ -12,8 +13,8 @@ import java.util.Vector;
  * Created by IntelliJ IDEA
  * Created by ustcck on 2016/12/10 18:59.
  */
-public class MySFTP {
-    public ChannelSftp connect(String host, int port, String username, String password) {
+public class SFTPUtils {
+    public static ChannelSftp connect(String host, int port, String username, String password) {
         ChannelSftp sftp = null;
         try {
             JSch jsch = new JSch();
@@ -57,7 +58,7 @@ public class MySFTP {
     /**
      * Disconnect with server
      */
-    public void disconnect(ChannelSftp sftp) {
+    public static void disconnect(ChannelSftp sftp) {
         if (sftp != null) {
             if (sftp.isConnected()) {
                 sftp.disconnect();
@@ -72,19 +73,21 @@ public class MySFTP {
      * 上传文件
      *
      * @param directory  上传的目录
-     * @param uploadFile 要上传的文件
+     * @param input 要上传的文件InputStream
      * @param sftp
      */
-    public void upload(String directory, String filepath, String filename, String uploadFile, ChannelSftp sftp) {
+    public static boolean upload(String directory, String filepath, String filename, InputStream input, ChannelSftp sftp) {
         try {
 //            sftp.cd(directory);
             makeDirectory(directory, filepath, sftp);
             String temppath = directory + filepath;
             sftp.cd(temppath);
-            File file = new File(uploadFile);
-            sftp.put(new FileInputStream(file), filename);
+//            File file = new File(uploadFile);
+            sftp.put(input, filename);
+            return true;
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            return false;
         }
     }
 
@@ -96,7 +99,7 @@ public class MySFTP {
      * @param saveFile     存在本地的路径
      * @param sftp
      */
-    public void download(String directory, String downloadFile, String saveFile, ChannelSftp sftp) {
+    public static void download(String directory, String downloadFile, String saveFile, ChannelSftp sftp) {
         try {
             sftp.cd(directory);
             File file = new File(saveFile);
@@ -113,7 +116,7 @@ public class MySFTP {
      * @param deleteFile 要删除的文件
      * @param sftp
      */
-    public void delete(String directory, String deleteFile, ChannelSftp sftp) {
+    public static void delete(String directory, String deleteFile, ChannelSftp sftp) {
         try {
             sftp.cd(directory);
             sftp.rm(deleteFile);
@@ -130,38 +133,16 @@ public class MySFTP {
      * @return
      * @throws SftpException
      */
-    public Vector listFiles(String directory, ChannelSftp sftp) throws SftpException {
+    public static Vector listFiles(String directory, ChannelSftp sftp) throws SftpException {
         return sftp.ls(directory);
     }
 
-    public static void main(String[] args) throws SftpException {
+/*    public static void main(String[] args) throws SftpException {
         MySFTP mySFTP = new MySFTP();
         ChannelSftp connect = mySFTP.connect("120.27.49.184", 22, "root", "Ck4438707");
 
         makeDirectory("/usr/share/nginx/html/image", "/2017/12/11", connect);
 
-    }
-//    public static void main(String[] args) {
-//        MySFTP sf = new MySFTP();
-//        String host = "192.168.0.1";
-//        int port = 22;
-//        String username = "root";
-//        String password = "root";
-//        String directory = "/home/httpd/test/";
-//        String uploadFile = "D:\\tmp\\upload.txt";
-//        String downloadFile = "upload.txt";
-//        String saveFile = "D:\\tmp\\download.txt";
-//        String deleteFile = "delete.txt";
-//        ChannelSftp sftp = sf.connect(host, port, username, password);
-//        sf.upload(directory, uploadFile, sftp);
-//        sf.download(directory, downloadFile, saveFile, sftp);
-//        sf.delete(directory, deleteFile, sftp);
-//        try {
-//            sftp.cd(directory);
-//            sftp.mkdir("ss");
-//            System.out.println("finished");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    }*/
+
 }
