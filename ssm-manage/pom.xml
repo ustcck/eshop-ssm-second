@@ -21,6 +21,8 @@
         <module>ssm-manage-dao</module>
         <module>ssm-manage-service</module>
         <module>ssm-manage-web</module>
+        <module>taotao-rest</module>
+        <module>taotao-portal</module>
     </modules>
 
 
@@ -56,22 +58,7 @@
             </plugin>-->
 
 
-            <!--tomcat7插件-->
-            <!--https://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/run-mojo.html-->
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>${tomcat7-maven-plugin.version}</version>
-                <configuration>
-                    <path>${tomcat-path.version}</path>
-                    <port>${tomcat-port.version}</port>
-                    <uriEncoding>${tomcat-uri-encoding.version}</uriEncoding>
-                    <url>http://localhost:8080/manager/text</url>
-                    <server>tomcat7</server>
-                    <username>admin</username>
-                    <password>admin</password>
-                </configuration>
-            </plugin>
+
 
             <!--jetty插件-->
             <!--http://www.eclipse.org/jetty/documentation/9.0.0.M3/jetty-maven-plugin.html-->
