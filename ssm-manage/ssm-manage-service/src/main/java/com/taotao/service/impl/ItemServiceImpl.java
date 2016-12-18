@@ -35,7 +35,6 @@ public class ItemServiceImpl implements ItemService {
     private TbItemParamItemMapper itemParamItemMapper;
 
     @Override
-
     public TbItem getItemById(long itemId) {
         //TbItem item = itemMapper.selectByPrimaryKey(itemId);
         //添加查询条件

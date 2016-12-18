@@ -63,6 +63,10 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+<!--        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+        </dependency>-->
         <!-- 日志处理 -->
         <!-- 日志文件管理包 start-->
         <!--下面这三个是配套使用：http://blog.csdn.net/woshiwxw765/article/details/7624556-->

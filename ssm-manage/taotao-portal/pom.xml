@@ -19,6 +19,11 @@
             <artifactId>ssm-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>cn.ustc.manage</groupId>
+            <artifactId>ssm-manage-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--spring相关-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -102,6 +107,12 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
