@@ -21,8 +21,6 @@
         <module>ssm-manage-dao</module>
         <module>ssm-manage-service</module>
         <module>ssm-manage-web</module>
-        <module>taotao-rest</module>
-        <module>taotao-portal</module>
     </modules>
 
 
