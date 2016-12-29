@@ -85,6 +85,15 @@
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
         <!-- 日志文件管理包 end-->
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+        </dependency>
     </dependencies>
 
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
+ * 商品查询Controller
  * Created by IntelliJ IDEA
  * Created by ustcck on 2016/12/18 14:46.
  */

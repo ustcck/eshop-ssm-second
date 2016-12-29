@@ -25,7 +25,7 @@
 	<div class="crumb">全部结果&nbsp;&gt;&nbsp;<strong>"${query}"</strong></div>
 <div class="clr"></div>
 <div class="m clearfix" id="bottom_pager">
-<div  id="pagin-btm" class="pagin fr" clstag="search|keycount|search|pre-page2">
+<div id="pagin-btm" class="pagin fr" clstag="search|keycount|search|pre-page2">
 	<span class="prev-disabled">上一页<b></b></span>
 	<a href="javascript:void(0)" class="current">1</a>
 	<a href="search?keyword=java&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2">2</a>
@@ -44,7 +44,7 @@
 <li class="item-book" bookid="11078102">
 	<div class="p-img">
 		<a target="_blank" href="/item/${item.id }.html">
-			<img width="160" height="160" data-img="1" data-lazyload="${item.image}" />
+			<img width="160" height="160" data-img="1" data-lazyload="${item.images[0]}" />
 		</a>
 	</div>
 	<div class="p-name">
